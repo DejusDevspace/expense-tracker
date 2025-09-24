@@ -35,7 +35,10 @@ export const AuthProvider = ({ children }) => {
     await updateProfile(user, { displayName: name });
   };
 
-  const logout = async () => await signOut(auth);
+  const logout = async () => {
+    await signOut(auth);
+    <Navigate to="/login" />;
+  };
 
   return (
     <AuthContext.Provider value={{ user, loading, login, register, logout }}>

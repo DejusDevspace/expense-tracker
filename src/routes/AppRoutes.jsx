@@ -25,8 +25,22 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
-      <Route path="/new" element={<AddExpense />} />
-      <Route path="/history" element={<History />} />
+      <Route
+        path="/new"
+        element={
+          <ProtectedRoute>
+            <AddExpense />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/history"
+        element={
+          <ProtectedRoute>
+            <History />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 };

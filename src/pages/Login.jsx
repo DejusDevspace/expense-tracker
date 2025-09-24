@@ -25,8 +25,9 @@ const Login = () => {
         <h2 className="text-2xl font-bold text-white mb-6 text-center">
           Expense Tracker
         </h2>
-        <div className="space-y-4">
-          <form onSubmit={handleLogin}>
+
+        <form onSubmit={handleLogin}>
+          <div className="space-y-4">
             <div>
               <label className="block text-gray-300 text-sm font-bold mb-2">
                 Email
@@ -71,8 +72,8 @@ const Login = () => {
                 "Sign In"
               )}
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

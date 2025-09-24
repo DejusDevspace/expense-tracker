@@ -21,7 +21,7 @@ import AppRoutes from "./routes/AppRoutes";
 import SideBar from "./components/SideBar";
 
 const AppContent = () => {
-  const { loading, logout } = useAuth();
+  const { loading, logout, user } = useAuth();
 
   return (
     <div className="min-h-screen relative flex items-center justify-center overflow-hidden text-white">
@@ -33,8 +33,8 @@ const AppContent = () => {
           </div>
         </div>
       ) : (
-        <div>
-          <SideBar />
+        <div className="min-h-screen bg-gray-900 text-white">
+          {user && <SideBar />}
           <AppRoutes />
         </div>
       )}

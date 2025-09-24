@@ -39,7 +39,7 @@ const Dashboard = () => {
     expenses.length > 0 ? (totalExpenses / expenses.length).toFixed(2) : 0;
 
   return (
-    <div>
+    <div className="ml-64 p-8">
       <h2 className="text-3xl font-bold mb-8">Dashboard</h2>
 
       {/* Stats Cards */}

@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { Home, Plus, Eye, LogOut } from "lucide-react";
 
 const SideBar = () => {
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
   const [currentTab, setCurrentTab] = useState("dashboard");
 
   return (
     <div className="fixed left-0 top-0 h-full w-64 bg-gray-800 shadow-lg">
       <div className="p-6">
         <h1 className="text-2xl font-bold mb-2">Expense Tracker</h1>
-        <p className="text-gray-400 text-sm mb-8">Welcome, 'user.email'</p>
+        <p className="text-gray-400 text-sm mb-8">
+          {/* Would add name on register and update profile */}
+          Welcome, Deju
+        </p>
         <nav className="space-y-4">
           <button
             onClick={() => setCurrentTab("dashboard")}
@@ -19,7 +23,7 @@ const SideBar = () => {
             }`}
           >
             <Home size={20} />
-            <span>Dashboard</span>
+            <NavLink to="/">Dashboard</NavLink>
           </button>
           <button
             onClick={() => setCurrentTab("add-expense")}
@@ -28,7 +32,7 @@ const SideBar = () => {
             }`}
           >
             <Plus size={20} />
-            <span>Add Expense</span>
+            <NavLink to="/new">Add Expense</NavLink>
           </button>
           <button
             onClick={() => setCurrentTab("history")}
@@ -37,7 +41,7 @@ const SideBar = () => {
             }`}
           >
             <Eye size={20} />
-            <span>Expense History</span>
+            <NavLink to="/history">Expense History</NavLink>
           </button>
         </nav>
       </div>

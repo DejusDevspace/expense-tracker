@@ -24,7 +24,7 @@ const AppContent = () => {
   const { loading, logout, user } = useAuth();
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center overflow-hidden text-white">
+    <>
       {loading ? (
         <div className="min-h-screen bg-gray-900 flex items-center justify-center">
           <div className="flex items-center space-x-3 text-white">
@@ -38,7 +38,7 @@ const AppContent = () => {
           <AppRoutes />
         </div>
       )}
-    </div>
+    </>
   );
 };
 

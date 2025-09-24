@@ -16,6 +16,7 @@ const Login = () => {
       setLoading(false);
     } catch (err) {
       console.error("Login Failed:", err.message);
+      setLoading(false);
     }
   };
 

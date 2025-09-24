@@ -15,34 +15,44 @@ const SideBar = () => {
           {/* Would add name on register and update profile */}
           Welcome, Deju
         </p>
-        <nav className="space-y-4">
-          <button
-            onClick={() => setCurrentTab("dashboard")}
-            className={`w-full flex items-center space-x-3 px-4 py-2 rounded-lg transition ${
-              currentTab === "dashboard" ? "bg-blue-600" : "hover:bg-gray-700"
-            }`}
-          >
-            <Home size={20} />
-            <NavLink to="/">Dashboard</NavLink>
-          </button>
-          <button
-            onClick={() => setCurrentTab("add-expense")}
-            className={`w-full flex items-center space-x-3 px-4 py-2 rounded-lg transition ${
-              currentTab === "add-expense" ? "bg-blue-600" : "hover:bg-gray-700"
-            }`}
-          >
-            <Plus size={20} />
-            <NavLink to="/new">Add Expense</NavLink>
-          </button>
-          <button
-            onClick={() => setCurrentTab("history")}
-            className={`w-full flex items-center space-x-3 px-4 py-2 rounded-lg transition ${
-              currentTab === "history" ? "bg-blue-600" : "hover:bg-gray-700"
-            }`}
-          >
-            <Eye size={20} />
-            <NavLink to="/history">Expense History</NavLink>
-          </button>
+        <nav className="flex flex-col space-y-2">
+          <NavLink to="/">
+            <button
+              onClick={() => setCurrentTab("dashboard")}
+              className={`w-full flex items-center space-x-3 px-4 py-2 rounded-lg transition ${
+                currentTab === "dashboard" ? "bg-blue-600" : "hover:bg-gray-700"
+              }`}
+            >
+              <Home size={20} />
+              <span>Dashboard</span>
+            </button>
+          </NavLink>
+
+          <NavLink to="/new">
+            <button
+              onClick={() => setCurrentTab("add-expense")}
+              className={`w-full flex items-center space-x-3 px-4 py-2 rounded-lg transition ${
+                currentTab === "add-expense"
+                  ? "bg-blue-600"
+                  : "hover:bg-gray-700"
+              }`}
+            >
+              <Plus size={20} />
+              <span>Add Expense</span>
+            </button>
+          </NavLink>
+
+          <NavLink to="/history">
+            <button
+              onClick={() => setCurrentTab("history")}
+              className={`w-full flex items-center space-x-3 px-4 py-2 rounded-lg transition ${
+                currentTab === "history" ? "bg-blue-600" : "hover:bg-gray-700"
+              }`}
+            >
+              <Eye size={20} />
+              <span>Expense History</span>
+            </button>
+          </NavLink>
         </nav>
       </div>
       <div className="absolute bottom-6 left-6 right-6">

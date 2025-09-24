@@ -78,7 +78,7 @@ const Dashboard = () => {
         <div className="bg-gray-800 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">Expenses by Category</h3>
           {categoryChartData.length > 0 ? (
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={140}>
               <BarChart data={categoryChartData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
                 <XAxis dataKey="category" stroke="#9CA3AF" />
@@ -94,7 +94,7 @@ const Dashboard = () => {
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <div className="h-300 flex items-center justify-center text-gray-400">
+            <div className="h-140 flex items-center justify-center text-gray-400">
               No data available. Add some expenses to see the chart.
             </div>
           )}
@@ -103,7 +103,7 @@ const Dashboard = () => {
         <div className="bg-gray-800 p-6 rounded-lg">
           <h3 className="text-xl font-semibold mb-4">Expenses by Importance</h3>
           {importanceChartData.length > 0 ? (
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={140}>
               <PieChart>
                 <Pie
                   data={importanceChartData}
@@ -132,7 +132,7 @@ const Dashboard = () => {
               </PieChart>
             </ResponsiveContainer>
           ) : (
-            <div className="h-300 flex items-center justify-center text-gray-400">
+            <div className="h-140 flex items-center justify-center text-gray-400">
               No data available. Add some expenses to see the chart.
             </div>
           )}

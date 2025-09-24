@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-const History = ({ expenses }) => {
+const History = () => {
   const [filter, setFilter] = useState("all");
   const [sortBy, setSortBy] = useState("date");
+  const [expenses, setExpenses] = useState([]);
 
   const filteredExpenses = expenses.filter((expense) => {
     if (filter === "all") return true;
@@ -19,7 +20,7 @@ const History = ({ expenses }) => {
   const categories = ["all", ...new Set(expenses.map((e) => e.category))];
 
   return (
-    <div>
+    <div className="ml-64 p-8">
       <h2 className="text-3xl font-bold mb-8">Expense History</h2>
 
       {/* Filters */}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AddExpense = ({ onAddExpense }) => {
   const [form, setForm] = useState({
@@ -51,7 +51,7 @@ const AddExpense = ({ onAddExpense }) => {
   };
 
   return (
-    <div>
+    <div className="ml-64 p-8">
       <h2 className="text-3xl font-bold mb-8">Add New Expense</h2>
 
       <div className="bg-gray-800 p-8 rounded-lg max-w-2xl">
